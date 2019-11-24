@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <title>SIMPLETODO</title>
+    <style>.delete {opacity: 0.50;}.delete:hover{opacity:1;}</style>
 </head>
 <body>
     <div class="wrapper">
@@ -48,6 +49,7 @@ addTask.addEventListener('submit', function(e) {
     task.textContent = value;
     deleteBtn.textContent = ' | delete';
     deleteBtn.style.color = 'red';
+    deleteBtn.style.cursor = 'pointer';
 
     //add classes
     deleteBtn.classList.add('delete');
