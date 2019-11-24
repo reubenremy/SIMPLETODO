@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <title>SIMPLETODO</title>
-    <style>.delete {opacity: 0.50;}.delete:hover{opacity:1;}</style>
+    <style>.delete {opacity: 0.50; color: red; cursor: pointer;}.delete:hover{opacity:1;}</style>
 </head>
 <body>
     <div class="wrapper">
@@ -37,27 +37,23 @@ taskList.addEventListener('click', function(e) {
 addTask.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    //capture value of input
+    //Create Constants
     const value = addTask.querySelector('input[type ="text"]').value;
-
-    //creating elements
     const li = document.createElement('li');
     const task = document.createElement('span');
     const deleteBtn = document.createElement('span');
 
-    //add Content
-    task.textContent = value;
-    deleteBtn.textContent = ' | delete';
-    deleteBtn.style.color = 'red';
-    deleteBtn.style.cursor = 'pointer';
-
-    //add classes
-    deleteBtn.classList.add('delete');
+    //Create & Append Task 
     task.classList.add('task');
-
-    //Nesting Elements in correct order
+    task.textContent = value;
     li.appendChild(task);
-    li.appendChild(deleteBtn);
+
+    //Create & Append Delete
+    deleteBtn.classList.add('delete');
+    deleteBtn.textContent = ' | delete'; 
+    li.appendChild(deleteBtn); 
+    
+    //Append li to DOM
     taskList.appendChild(li);
 })
 </script>
