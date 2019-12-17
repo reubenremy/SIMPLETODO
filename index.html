@@ -7,6 +7,15 @@
         h1 span {color:red;}
         .delete {opacity: 0.50; color: red; cursor: pointer;}
         .delete:hover{opacity:1;}
+        .wrapper {
+            /* border: 3px dotted limegreen; */
+            width: 180px;
+            height: 500px;
+            margin: 50px auto;
+        }
+        header {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -14,17 +23,7 @@
         <header>
             <h1>SIMPLE<span>TODO</span></h1>
         </header>
-        <div id="task-list" style="text-transform: uppercase;">
-            <ol>
-                <li>Send Opa $150</li>
-                <li>Pay CapOne - Bills</li>
-                <li>Purchase New Macbook Battery</li>
-                <li>Ideate social tasklist App (Similar Project Tasklist)</li>
-                <li>Pay Discover Bills</li>
-                <li>Pay Victoria Secret Card</li> 
-                <li>Read API Article</li>
-            </ol>
-        </div>
+        <div id="task-list" style="text-transform: uppercase;"><ol></ol></div>
         <form id="add-task">
             <input type="text" placeholder="Add task">
             <button>ADD</button>
@@ -32,6 +31,7 @@
         <button id='save'>Save</button>
     </div>
 <script>
+const hide = element => this.style.display = "none";
 const wrapper = document.querySelector('.wrapper');
 const taskList = document.querySelector("#task-list ol");
 const addTask = document.forms['add-task'];
@@ -77,6 +77,7 @@ save.addEventListener('click', function() {
     saveLink.href = `data:application/xml;charset=utf-8,${taskContent}" download="filename.html`
     saveLink.innerHTML = 'File Ready to Download - Click Here';
     wrapper.appendChild(saveLink);
+    wrapper.hide;
 })
 </script>
 </body>
